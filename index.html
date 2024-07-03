@@ -16,17 +16,17 @@
     padding: 20px; /* Ensure there's always space around the content */
   }
   img {
-    max-width: calc(100% - 20px); /* Adjust max-width to account for margin */
+    max-width: calc(100% - 40px); /* Adjust max-width to account for margin */
     height: auto;
-    max-height: calc(80% - 20px); /* Adjust max-height to account for margin */
+    max-height: calc(80% - 40px); /* Adjust max-height to account for margin */
     cursor: pointer; /* Change cursor to indicate clickable */
     margin: 20px; /* Maintain spacing around the image */
   }
 </style>
 </head>
-<body>
+<body onclick="playRandomSound()">
 <!-- Image acting as a button -->
-<img src="https://cdn.pixabay.com/photo/2014/04/02/16/21/hippo-307015_1280.png" alt="Responsive Image" onclick="playRandomSound()">
+<img src="https://cdn.pixabay.com/photo/2014/04/02/16/21/hippo-307015_1280.png" alt="Responsive Image">
 
 <!-- Audio elements -->
 <audio id="sound1" src="sound1.mp3"></audio>

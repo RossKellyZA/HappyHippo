@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Image Button</title>
+<title>Happy Hippo</title>
+<link rel="icon" type="image/png" href="https://cdn.pixabay.com/photo/2014/04/02/16/21/hippo-307015_1280.png">
 <style>
   body, html {
     height: 100%;
@@ -31,7 +32,7 @@
 <audio id="sound1" src="sound1.mp3"></audio>
 <audio id="sound2" src="sound2.mp3"></audio>
 <audio id="sound3" src="sound3.mp3"></audio>
-<audio id="sound4" src="sound4.mp3"></audio>
+<!-- <audio id="sound4" src="sound4.mp3"></audio>-->
 
 <script>
 function playRandomSound() {
@@ -39,7 +40,7 @@ function playRandomSound() {
     document.getElementById('sound1'),
     document.getElementById('sound2'),
     document.getElementById('sound3'),
-    document.getElementById('sound4')
+    //document.getElementById('sound4')
   ];
   const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
   randomSound.play();

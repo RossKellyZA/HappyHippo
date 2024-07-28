@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Hippo</title>
-<link rel="icon" type="image/png" href="https://cdn.pixabay.com/photo/2014/04/02/16/21/hippo-307015_1280.png">
+  <title>Picture Book</title>
+  <link rel="icon" href="data:,">
   <style>
     body {
       margin: 0;
@@ -28,8 +28,8 @@
       flex-direction: column;
     }
     .page img {
-      max-width: 100%;
-      max-height: 80%;
+      height: 100%;
+      width: auto;
     }
     .page-text {
       position: absolute;
@@ -38,6 +38,13 @@
       color: white;
       padding: 10px;
       border-radius: 5px;
+    }
+    .cover-title {
+      font-size: 3rem;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
     }
     .arrow {
       position: absolute;
@@ -60,23 +67,26 @@
 </head>
 <body>
   <div class="book-container">
+    <div class="page" style="background-color: purple;">
+      <div class="cover-title">Happy Hippos</div>
+    </div>
     <div class="page" style="background-color: red;">
-      <img src="image1.jpg" alt="Image 1">
+      <img src="images/1.jpeg" alt="Image 1">
       <div class="page-text">This is the first page</div>
     </div>
     <div class="page" style="background-color: green;">
-      <img src="image2.jpg" alt="Image 2">
+      <img src="images/2.jpeg" alt="Image 2">
       <div class="page-text">This is the second page</div>
     </div>
     <div class="page" style="background-color: blue;">
-      <img src="image3.jpg" alt="Image 3">
+      <img src="images/3.jpeg" alt="Image 3">
       <div class="page-text">This is the third page</div>
     </div>
     <div class="arrow arrow-left">&#9664;</div>
     <div class="arrow arrow-right">&#9654;</div>
   </div>
 
-  <audio id="sound" src="sound.mp3"></audio>
+  <audio id="sound" src="sound1.mp3"></audio>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {

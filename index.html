@@ -1,50 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Hippo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Hippo</title>
 <link rel="icon" type="image/png" href="https://cdn.pixabay.com/photo/2014/04/02/16/21/hippo-307015_1280.png">
-<style>
-  body, html {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 10px; /* Ensure there's always space around the content */
-  }
-  img {
-    max-width: calc(100% - 10px); /* Adjust max-width to account for margin */
-    height: auto;
-    max-height: calc(80% - 10px); /* Adjust max-height to account for margin */
-    cursor: pointer; /* Change cursor to indicate clickable */
-    margin: 10px; /* Maintain spacing around the image */
-  }
-</style>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    .book-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      overflow: hidden;
+    }
+    .page {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: transform 0.5s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .page img {
+      max-width: 100%;
+      max-height: 80%;
+    }
+    .page-text {
+      position: absolute;
+      bottom: 10%;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .arrow-left {
+      left: 10px;
+    }
+    .arrow-right {
+      right: 10px;
+    }
+  </style>
 </head>
-<body onclick="playRandomSound()">
-<!-- Image acting as a button -->
-<img src="https://cdn.pixabay.com/photo/2014/04/02/16/21/hippo-307015_1280.png" alt="Responsive Image">
+<body>
+  <div class="book-container">
+    <div class="page" style="background-color: red;">
+      <img src="image1.jpg" alt="Image 1">
+      <div class="page-text">This is the first page</div>
+    </div>
+    <div class="page" style="background-color: green;">
+      <img src="image2.jpg" alt="Image 2">
+      <div class="page-text">This is the second page</div>
+    </div>
+    <div class="page" style="background-color: blue;">
+      <img src="image3.jpg" alt="Image 3">
+      <div class="page-text">This is the third page</div>
+    </div>
+    <div class="arrow arrow-left">&#9664;</div>
+    <div class="arrow arrow-right">&#9654;</div>
+  </div>
 
-<!-- Audio elements -->
-<audio id="sound1" src="sound1.mp3"></audio>
-<audio id="sound2" src="sound2.mp3"></audio>
-<audio id="sound3" src="sound3.mp3"></audio>
-<!-- <audio id="sound4" src="sound4.mp3"></audio>-->
+  <audio id="sound" src="sound.mp3"></audio>
 
-<script>
-function playRandomSound() {
-  const sounds = [
-    document.getElementById('sound1'),
-    document.getElementById('sound2'),
-    document.getElementById('sound3'),
-    //document.getElementById('sound4')
-  ];
-  const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
-  randomSound.play();
-}
-</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      let currentPage = 0;
+      const pages = document.querySelectorAll('.page');
+      const sound = document.getElementById('sound');
+
+      function showPage(index) {
+        pages.forEach((page, i) => {
+          const transformValue = `translateX(${(i - index) * 100}%)`;
+          page.style.transform = transformValue;
+        });
+      }
+
+      function nextPage() {
+        if (currentPage < pages.length - 1) {
+          currentPage++;
+          showPage(currentPage);
+        }
+      }
+
+      function prevPage() {
+        if (currentPage > 0) {
+          currentPage--;
+          showPage(currentPage);
+        }
+      }
+
+      document.querySelector('.arrow-right').addEventListener('click', nextPage);
+      document.querySelector('.arrow-left').addEventListener('click', prevPage);
+
+      document.body.addEventListener('click', () => {
+        sound.play();
+      });
+
+      // Initial page display
+      showPage(currentPage);
+    });
+  </script>
 </body>
 </html>

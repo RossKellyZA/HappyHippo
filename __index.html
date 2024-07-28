@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Hippo</title>
+<link rel="icon" type="image/png" href="https://cdn.pixabay.com/photo/2014/04/02/16/21/hippo-307015_1280.png">
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 10px; /* Ensure there's always space around the content */
+  }
+  img {
+    max-width: calc(100% - 10px); /* Adjust max-width to account for margin */
+    height: auto;
+    max-height: calc(80% - 10px); /* Adjust max-height to account for margin */
+    cursor: pointer; /* Change cursor to indicate clickable */
+    margin: 10px; /* Maintain spacing around the image */
+  }
+</style>
+</head>
+<body onclick="playRandomSound()">
+<!-- Image acting as a button -->
+<img src="https://cdn.pixabay.com/photo/2014/04/02/16/21/hippo-307015_1280.png" alt="Responsive Image">
+
+<!-- Audio elements -->
+<audio id="sound1" src="sound1.mp3"></audio>
+<audio id="sound2" src="sound2.mp3"></audio>
+<audio id="sound3" src="sound3.mp3"></audio>
+<!-- <audio id="sound4" src="sound4.mp3"></audio>-->
+
+<script>
+function playRandomSound() {
+  const sounds = [
+    document.getElementById('sound1'),
+    document.getElementById('sound2'),
+    document.getElementById('sound3'),
+    //document.getElementById('sound4')
+  ];
+  const randomSound = sounds[Math.floor(Math.random() * sounds.length)];
+  randomSound.play();
+}
+</script>
+</body>
+</html>

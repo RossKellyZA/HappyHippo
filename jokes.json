@@ -21,10 +21,6 @@
         "punchline": "Because he was outstanding in his field!"
       },
       {
-        "joke": "What do you get when you cross a sheep and a kangaroo?",
-        "punchline": "A woolly jumper!"
-      },
-      {
         "joke": "Why are fish so smart?",
         "punchline": "Because they live in schools!"
       },
@@ -39,10 +35,6 @@
       {
         "joke": "What do you call a sleeping bull?",
         "punchline": "A bulldozer!"
-      },
-      {
-        "joke": "How do you catch a squirrel?",
-        "punchline": "Climb a tree and act like a nut!"
       },
       {
         "joke": "Why did the chicken join a band?",
@@ -61,10 +53,6 @@
         "punchline": "A labracadabrador!"
       },
       {
-        "joke": "Why do cows wear bells?",
-        "punchline": "Because their horns don’t work!"
-      },
-      {
         "joke": "What do you get when you cross a frog with a rabbit?",
         "punchline": "A bunny ribbit!"
       },
@@ -79,6 +67,42 @@
       {
         "joke": "How does a dog stop a video?",
         "punchline": "It presses the paws button!"
+      },
+      {
+        "joke": "What do you call an alligator in a vest?",
+        "punchline": "An investigator!"
+      },
+      {
+        "joke": "What do you get when you cross a snowman and a dog?",
+        "punchline": "Frostbite!"
+      },
+      {
+        "joke": "How do you make a tissue dance?",
+        "punchline": "Put a little boogie in it!"
+      },
+      {
+        "joke": "What do you call a bear caught in the rain?",
+        "punchline": "A drizzly bear!"
+      },
+      {
+        "joke": "Why are cats bad storytellers?",
+        "punchline": "Because they only have one tail!"
+      },
+      {
+        "joke": "What do you get when you cross a snake with a pie?",
+        "punchline": "A pie-thon!"
+      },
+      {
+        "joke": "What do you call a pig that does karate?",
+        "punchline": "A pork chop!"
+      },
+      {
+        "joke": "How do bees get to school?",
+        "punchline": "By school buzz!"
+      },
+      {
+        "joke": "What do you get when you cross a dog and a calculator?",
+        "punchline": "A friend you can count on!"
       }
     ]
   }

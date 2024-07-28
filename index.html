@@ -18,18 +18,24 @@
       overflow: hidden;
     }
     .page {
-      width: 100%;
-      height: 100%;
+      width: 100vw; /* Ensure each page takes up the full viewport width */
+      height: 100vh; /* Ensure each page takes up the full viewport height */
       position: absolute;
       transition: transform 0.5s ease;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
+      overflow: hidden; /* Hide overflow to prevent overlap */
     }
     .page img {
-      height: 100%;
-      width: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      min-width: 100%;
+      min-height: 100%;
+      object-fit: cover; /* Ensure the image covers the page */
     }
     .page-text {
       position: absolute;
@@ -96,7 +102,7 @@
 
       function showPage(index) {
         pages.forEach((page, i) => {
-          const transformValue = `translateX(${(i - index) * 100}%)`;
+          const transformValue = `translateX(${(i - index) * 100}vw)`; // Use vw for precise width
           page.style.transform = transformValue;
         });
       }
@@ -124,6 +130,11 @@
 
       // Initial page display
       showPage(currentPage);
+
+      // Adjust page width on resize
+      window.addEventListener('resize', () => {
+        showPage(currentPage);
+      });
     });
   </script>
 </body>

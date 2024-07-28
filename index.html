@@ -135,6 +135,33 @@
       window.addEventListener('resize', () => {
         showPage(currentPage);
       });
+
+      // Function to request fullscreen
+      function requestFullscreen() {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+          document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari and Opera
+          document.documentElement.webkitRequestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+          document.documentElement.msRequestFullscreen();
+        }
+      }
+
+      // Detect if the user is on a mobile device
+      function isMobileDevice() {
+        return /Mobi|Android/i.test(navigator.userAgent);
+      }
+
+      // Prompt the user to go fullscreen on mobile devices
+      if (isMobileDevice()) {
+        setTimeout(() => {
+          if (confirm("Do you want to view this in fullscreen mode?")) {
+            requestFullscreen();
+          }
+        }, 1000); // Delay to ensure the page is fully loaded
+      }
     });
   </script>
 </body>
